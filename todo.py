@@ -1,3 +1,10 @@
+def add_task():
+    task = input("Enter a new task: ")
+    with open("tasks.txt", "a") as f:
+        f.write(task + "\n")
+    print("Task added successfully!")
+
+
 def view_tasks():
     try:
         with open("tasks.txt", "r") as f:
@@ -11,13 +18,20 @@ def view_tasks():
     except FileNotFoundError:
         print("No tasks file found.")
 
+
 def main():
     print("To-Do List Manager")
+    print("1. Add Task")
     print("2. View Tasks")
     choice = input("Enter choice: ")
 
-    if choice == "2":
+    if choice == "1":
+        add_task()
+    elif choice == "2":
         view_tasks()
+    else:
+        print("Invalid choice")
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     main()

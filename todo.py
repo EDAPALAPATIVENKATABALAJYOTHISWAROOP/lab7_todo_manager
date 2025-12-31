@@ -1,6 +1,6 @@
 def add_task():
     task = input("Enter a new task: ")
-    with open("tasks.txt", "a") as f:
+    with open("task.txt", "a") as f:
         f.write(task + "\n")
     print("Task added successfully!")
 
